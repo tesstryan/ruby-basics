@@ -63,7 +63,8 @@ favorites["song"] = "Red Rain"
 #
 # should display the list of the names of your friends.
 
-favorites["friends"] =
+puts favorites["friends"]
+
 
 
 
