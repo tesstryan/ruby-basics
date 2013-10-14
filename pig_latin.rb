@@ -18,10 +18,21 @@
 # address = "Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal."
 # ruby = "Ruby gives us lots of data containers to choose from"
 
-address = "Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal."
 
-puts address.
+def pig_latin_translator
+  address = "Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal."
+    address.split.each do |word|
+      if /[aeiou]/.match(word[0])
+        print word + "ay" + " "
+      else /[bcdfghjklmnpqrstvwxyz]/.match(word[0])
+        first_letter = word[0]
+        word.slice!(0)
+        print word + first_letter + "ay" + " "
+      end
+    end
+end
 
+pig_latin_translator
 
 # After you can encode, try to decode!
 

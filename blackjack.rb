@@ -15,14 +15,82 @@
 # Example Output #3:
 # 2 A
 
+deck_of_cards = ["2","2","2","2",
+         "3","3","3","3",
+         "4","4","4","4",
+         "5","5","5","5",
+         "6","6","6","6",
+         "7","7","7","7",
+         "8","8","8","8",
+         "9","9","9","9",
+         "10","10","10","10",
+         "Jack","Jack","Jack","Jack",
+         "Queen","Queen","Queen","Queen",
+         "King","King","King","King",
+         "Ace","Ace","Ace","Ace"]
+
+value_of_cards = {'Ace' => 11,
+                '2' => 2,
+                '3' => 3,
+                '4' => 4,
+                '5' => 5,
+                '6' => 6,
+                '7' => 7,
+                '8' => 8,
+                '9' => 9,
+                '10' => 10,
+                'J' => 10,
+                'Q' => 10,
+                'K' => 10
+                }
+
+card_1 = deck_of_cards.sample
+card_2 = deck_of_cards.sample
+
+puts "You have a #{card_1} and a #{card_2}."
+
+hand_value = value_of_cards.values_at(card_1, card_2).inject(:+)
+
+puts "You have a value of #{hand_value}."
+
+if hand_value > 21
+  puts "Dealer wins, better luck next time."
+end
+
+if hand_value == 21
+  puts "BLACKJACK! You have won."
+end
+
+if hand_value < 21
+  puts "Would you like to hit or stay?"
+  answer = gets.chomp.downcase
+    if answer.include?("hit") == true
+      card_3 = deck_of_cards.sample
+      puts "You now have #{card_1}, #{card_2} and a #{card_3}."
+      hand_value = value_of_cards.values_at(card_1, card_2, card_3).inject(:+)
+      puts "You have a value of #{hand_value}."
+        if hand_value > 21
+          puts "Dealer wins, better luck next time."
+        end
+
+        if hand_value == 21
+          puts "BLACKJACK! Congrats you have beat the dealer."
+        end
+
+        if hand_value < 21
+          puts "Would you like to hit or stay?"
+          answer = gets.chomp.downcase
+            if answer.include?("hit") == true
+              card_3 = deck_of_cards.sample
+              puts "You now have #{card_1}, #{card_2} and a #{card_3}."
+              hand_value = value_of_cards.values_at(card_1, card_2, card_3).inject(:+)
+              puts "You have a value of #{hand_value}."
+            end
+        end
+    end
+end
 
 
-
-
-# 2. Enhance #1 by showing the total score.
-# HINT: Consider all aces to have a value of 11.
-# Example Output #1:
-#
 # 5 8
 # You have 13.
 #
