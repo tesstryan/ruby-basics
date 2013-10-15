@@ -18,22 +18,22 @@ roll_dice 12
 # Copy your solution from CHALLENGE #3 in strings.rb.
 #
 
-me = "Jeff is from Skokie"
-neal = "Neal is from Chicago"
-mike = "Mike is from Freeport"
-vince = "Vince is from Ann Arbor"
+me = "Tess is from Minnetonka"
+thea = "Thea is from Eden Prarie"
+ian = "Ian is from Castle Rock"
+amanda = "Amanda is from Helotes"
 
-def display_jeff(person)
+def display_tess(person)
   line = "-" * 60
   puts line
   puts "|" + person.center(line.length-2) + "|"
   puts line
 end
 
-display_jeff("Pickles")
-display_jeff(neal)
-display_jeff(mike)
-display_jeff(vince)
+display_tess(me)
+display_tess(thea)
+display_tess(ian)
+display_tess(amanda)
 
 # line = "-" * 36
 # puts line

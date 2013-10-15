@@ -14,15 +14,11 @@
 # To make your program really believable, have Grandma shout
 # a different year each time, maybe any year at random between 1930 and 1950.
 
+puts "Hi Jason, what are you up to?"
 phrase = gets.chomp
-
 if phrase == phrase.upcase
-  year = rand(1930..1950)
+  year = rand(1900...1999)
   puts "NO, NOT SINCE #{year}!"
 else
   puts "HUH?!  SPEAK UP, SONNY!"
 end
-
-
-
-
