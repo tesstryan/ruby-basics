@@ -15,24 +15,25 @@
 # 1. If a word starts with a consonant, move it to the end of the word, and then add "ay"
 # 2. If a word starts with a vowel, simply add "ay" to the end of the word.
 
-# address = "Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal."
+
 # ruby = "Ruby gives us lots of data containers to choose from"
 
-
-def pig_latin_translator
+  def pig_latin_translator
   address = "Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal."
-    address.split.each do |word|
-      if /[aeiou]/.match(word[0])
-        print word + "ay" + " "
-      else /[bcdfghjklmnpqrstvwxyz]/.match(word[0])
-        first_letter = word[0]
-        word.slice!(0)
-        print word + first_letter + "ay" + " "
-      end
+  address.downcase.split.each do |word|
+    if /[bcdfghjklmnpqrstuvwxyz]/.match(word[0])
+      first_letter = word[0]
+      word.slice!(0)
+      print word + first_letter + "ay" + " "
+    else
+      print word + "ay" + " "
     end
+  end
 end
 
 pig_latin_translator
+
+
 
 # After you can encode, try to decode!
 
@@ -46,7 +47,7 @@ pig_latin_translator
 
 # Here are some sentences to get you started:
 
-# address = "Four score and seven years ago our fathers brought forth on this continent a new nation, conceived in liberty, and dedicated to the proposition that all men are created equal."
+#
 # ruby = "Ruby gives us lots of data containers to choose from"
 
 # oodgay ucklay!
